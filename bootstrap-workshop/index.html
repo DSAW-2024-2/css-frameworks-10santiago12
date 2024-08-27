@@ -11,57 +11,85 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
-    body 
-    {
+    body {
       background-color: #f3eae3;
     }
 
-    .main-container 
-    {
+    .main-container {
       background-color: #fff;
       width: 720px;
       height: 480px;
       border-radius: 10px;
       overflow: hidden;
+      display: flex;
+      flex-direction: row;
     }
 
-    .image-container img 
-    {
+    .image-container img {
       width: 100%;
       height: 100%;
       border-top-left-radius: 10px;
       border-bottom-left-radius: 10px;
     }
 
-    .btn-primary 
-    {
+    .btn-primary {
       background-color: #3d8168;
       border-color: #3d8168;
       cursor: pointer;
     }
 
-    .btn-primary:hover 
-    {
+    .btn-primary:hover {
       background-color: #2f6654;
+    }
+
+    @media (max-width: 768px) {
+      .main-container {
+        width: 100%;
+        height: auto;
+        flex-direction: column;
+        border-radius: 0;
+      }
+
+      .image-container img {
+        border-radius: 0;
+        height: auto;
+      }
+
+      .image-container {
+        height: 200px;
+      }
+
+      .main-container {
+        background-color: #f3eae3;
+        padding: 16px;
+      }
+
+      .info-container {
+        background-color: #fff;
+        border-radius: 10px;
+        padding: 16px;
+      }
+
+      .image-container img {
+        content: url('../assets/images/image-product-mobile.jpg');
+      }
     }
   </style>
 </head>
 
 <body class="d-flex justify-content-center align-items-center vh-100">
-  <div class="main-container d-flex">
+  <div class="main-container">
     <div class="row g-0 w-100 h-100">
-      <div class="col-6 p-0">
-        <div class="image-container h-100">
-          <img src="../assets/images/image-product-desktop.jpg" alt="Lotion">
-        </div>
+      <div class="col-12 col-md-6 p-0 image-container">
+        <img src="../assets/images/image-product-desktop.jpg" alt="Perfume">
       </div>
-      <div class="col-6 p-4 d-flex flex-column">
+      <div class="col-12 col-md-6 p-4 d-flex flex-column info-container">
         <h6 class="font-small p-2 m-0" style="font-family: Arial, Helvetica, sans-serif;">P E R F U M E</h6>
         <h1 class="card-title p-2 fs-1" style="font-family: 'Libre Baskerville', serif; font-weight: bold;">Gabrielle Essence Eau De Parfum</h1>
         <p class="text-secondary p-2 fs-6 m-0" style="font-family: Verdana, Geneva, Tahoma, sans-serif">A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
         <div class="p-2 d-flex flex-column">
           <div class="mb-2 d-flex align-items-center">
-            <h2 class="text-primary m-0" style="font-family: 'Libre Baskerville', serif; font-weight: bold; color: #3d8168 !important">$149.99</h2>
+            <h2 class="text-primary m-0" style="font-family: 'Libre Baskerville', serif; font-weight: bold; color: #3d8168 !important">$149.99</h2> 
             <p class="text-secondary m-0 ms-4" style="font-family: Arial, Helvetica, sans-serif;"><del>$169.99</del></p>
           </div>
           <div class="mt-3">
