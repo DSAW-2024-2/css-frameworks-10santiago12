@@ -11,69 +11,78 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
   <style>
-    body {
+    body 
+    {
       background-color: #f3eae3;
     }
 
-    .main-container {
+    .main-container 
+    {
       background-color: #fff;
-      width: 720px;
-      height: 480px;
+      width: 100%;
+      max-width: 720px;
+      height: auto;
       border-radius: 10px;
       overflow: hidden;
       display: flex;
-      flex-direction: row;
+      flex-direction: column;
+      margin: 20px;
     }
 
-    .image-container img {
+    .image-container img 
+    {
       width: 100%;
-      height: 100%;
+      height: auto;
       border-top-left-radius: 10px;
-      border-bottom-left-radius: 10px;
     }
 
-    .btn-primary {
+    .mobile-image 
+    {
+      display: none;
+    }
+
+    .btn-primary 
+    {
       background-color: #3d8168;
       border-color: #3d8168;
       cursor: pointer;
     }
 
-    .btn-primary:hover {
-      background-color: #2f6654;
+    .btn-primary:hover, .btn-primary:active 
+    {
+      background-color: #2f6654 !important;
+      border-color: #2f6654;
     }
 
-    @media (max-width: 768px) {
-      .main-container {
-        width: 100%;
-        height: auto;
-        flex-direction: column;
-        border-radius: 0;
-      }
-
-      .image-container img {
-        border-radius: 0;
-        height: auto;
-      }
-
-      .image-container {
-        height: 200px;
-      }
-
-      .main-container {
+    @media (max-width: 768px) 
+    {
+      body 
+      {
         background-color: #f3eae3;
-        padding: 16px;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
       }
-
-      .info-container {
-        background-color: #fff;
-        border-radius: 10px;
-        padding: 16px;
+      .main-container 
+      {
+        width: 90%;
+        max-width: 350px;
+        height: auto;
+        margin: auto;
       }
-
-      .image-container img {
-        content: url('../assets/images/image-product-mobile.jpg');
+      .desktop-image 
+      {
+        display: none;
       }
-    }
+      .mobile-image 
+      {
+        display: block;
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+  }
   </style>
 </head>
 
@@ -81,11 +90,12 @@
   <div class="main-container">
     <div class="row g-0 w-100 h-100">
       <div class="col-12 col-md-6 p-0 image-container">
-        <img src="../assets/images/image-product-desktop.jpg" alt="Perfume">
+        <img class="desktop-image img-fluid" src="../assets/images/image-product-desktop.jpg" alt="Perfume">
+        <img class="mobile-image img-fluid" src="../assets/images/image-product-mobile.jpg" alt="Perfume">
       </div>
       <div class="col-12 col-md-6 p-4 d-flex flex-column info-container">
         <h6 class="font-small p-2 m-0" style="font-family: Arial, Helvetica, sans-serif;">P E R F U M E</h6>
-        <h1 class="card-title p-2 fs-1" style="font-family: 'Libre Baskerville', serif; font-weight: bold;">Gabrielle Essence Eau De Parfum</h1>
+        <h1 class="card-title p-2 fs-1" style="font-family: Libre Baskerville, serif; font-weight: bold;">Gabrielle Essence Eau De Parfum</h1>
         <p class="text-secondary p-2 fs-6 m-0" style="font-family: Verdana, Geneva, Tahoma, sans-serif">A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
         <div class="p-2 d-flex flex-column">
           <div class="mb-2 d-flex align-items-center">
