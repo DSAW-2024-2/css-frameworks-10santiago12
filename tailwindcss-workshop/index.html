@@ -1,33 +1,113 @@
 <!DOCTYPE html>
-<html>
-  <head>
-    <meta charset="UTF-8" />
-    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <script src="https://cdn.tailwindcss.com"></script>
-  </head>
-  <body> 
-    Your Result
-    76
-    of 100
-  
-    Great
-    You scored higher than 65% of the people who have taken these tests.
-  
-    Summary
-  
-    Reaction
-    80 / 100
-  
-    Memory
-    92 / 100
-  
-    Verbal
-    61 / 100
-  
-    Visual
-    72 / 100
-  
-    Continue
+<html lang="en">
 
-  </body>
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Tailwind Workshop</title>
+  <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Libre+Baskerville:ital,wght@0,400;0,700;1,400&display=swap" rel="stylesheet">
+  <style>
+    body 
+    {
+      background-color: #f3eae3;
+    }
+
+    .main-container 
+    {
+      background-color: #fff;
+      width: 100%;
+      max-width: 720px;
+      height: auto;
+      border-radius: 10px;
+      overflow: hidden;
+      display: flex;
+      flex-direction: column;
+      margin: 20px;
+    }
+
+    .desktop-image 
+    {
+      display: block;
+    }
+
+    .mobile-image 
+    {
+      display: none;
+    }
+
+    .text-5xl 
+    {
+      font-size: 2.7rem;
+    }
+
+    @media (max-width: 767px) 
+    {
+      body 
+      {
+        background-color: #f3eae3;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        padding: 0;
+      }
+      .main-container 
+      {
+        width: 90%;
+        max-width: 350px;
+        height: auto;
+        margin: auto;
+      }
+
+      .desktop-image 
+      {
+        display: none;
+      }
+
+      .mobile-image 
+      {
+        display: block;
+        width: 100%;
+        border-top-left-radius: 10px;
+        border-top-right-radius: 10px;
+      }
+      .text-5xl 
+      {
+        font-size: 1.875rem;
+      }
+    }
+  </style>
+</head>
+
+<body class="flex justify-center items-center min-h-screen">
+  <div class="main-container">
+    <div class="flex flex-col md:flex-row w-full h-full">
+      <div class="w-full md:w-1/2 p-0">
+        <img class="desktop-image w-full h-auto rounded-t-lg md:rounded-none md:rounded-l-lg" src="../assets/images/image-product-desktop.jpg" alt="Perfume">
+        <img class="mobile-image w-full h-auto rounded-t-lg" src="../assets/images/image-product-mobile.jpg" alt="Perfume">
+      </div>
+      <div class="w-full md:w-1/2 p-5 flex flex-col">
+        <h6 class="text-lg uppercase tracking-wide text-gray-500 p-3">P e r f u m e</h6>
+        <h1 class="text-5xl mobile:text-3xl font-serif font-bold text-gray-900 p-1" style="font-family: 'Libre Baskerville', serif;">
+          Gabrielle Essence Eau De Parfum
+        </h1>           
+        <p class="text-gray-500 p-2 text-xl m-1 font-sans">A floral, solar and voluptuous interpretation composed by Olivier Polge, Perfumer-Creator for the House of CHANEL.</p>
+        <div class="p-2 flex flex-col">
+          <div class="mb-2 flex items-center">
+            <h2 class="text-3xl font-serif font-bold" style="color: #3d8168; font-family: 'Libre Baskerville', serif;">$149.99</h2>             
+            <p class="text-gray-500 m-0 ml-9 text-base font-sans"><del>$169.99</del></p>
+          </div>
+          <div class="mt-3">
+            <button class="bg-green-700 text-white py-2 px-4 rounded-md w-full hover:bg-green-800 flex items-center justify-center">
+              <img src="../assets/images/icon-cart.svg" alt="Cart" class="mr-2">Add to cart</button>
+          </div>
+        </div>        
+      </div>
+    </div>
+  </div>
+
+</body>
+
 </html>
